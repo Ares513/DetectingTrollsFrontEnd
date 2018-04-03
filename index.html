@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
@@ -45,27 +46,22 @@ form.example::after {
 </style>
 </head>
 <body>
+<h1>Russian Troll Detector</h1>
 
 
-
-<form class="example" onsubmit=submitForm(target) style="margin:auto;max-width:300px">
-  <input type="text" placeholder="Search.." name="search2">
-  <button type="submit"><i class="fa fa-angle-double-right"></i></button>
+<form class="example" style="margin:auto;max-width:300px">
+  <input type="text" placeholder="Search.." id="target">
+  <button type="button" onclick=hitTarget(document.getElementById("#target"))><i class="fa fa-angle-double-right"></i></button>
 </form>
 
 </body>
 
 <script>
-function submitForm(target) {
-    var http = new XMLHttpRequest();
-    http.open("GET", "preresist.org:5000/predict", true);
-    http.setRequestHeader("Content-type","application/json");
-    var test = "{" + "target: " + target + "}";
-    http.send(test);
-    http.onload = function() {
-        alert(http.responseText);
-    }
+function hitTarget(target) {
+	$.getJSON('http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/predict?target=' + target, function(data) {
+		alert(data);
+	});
+	return false;
 }
-
 </script>
 </html> 
