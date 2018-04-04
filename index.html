@@ -4,10 +4,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>W3.CSS Template</title>
+<title>Detecting Trolls On Twitter</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--> <!-- Apparently w3css is down right now? -->
+<link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,18 +24,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Report an Error</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Donate & Contribute</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Report An Error</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Donate & Contribute</a>
   </div>
 </div>
 
@@ -43,20 +44,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <h1 class="w3-margin w3-jumbo">Troll Detector</h1>
   <p class="w3-xlarge">Use this AI to see how likely a tweet is to be from a Russian Troll!</p>
   <textarea name="textarea" class="w3-input" style="width:50%; margin: 0 auto; min-height: 80px; font-size: 18px;"></textarea>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Compute</button>
 </header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+      <h1>About</h1>
+      <h5 class="w3-padding-32">What is this and what does it do?</h5>
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+      <p class="w3-text-grey">NBC Universal has provided 200,000 tweets determined to be related in some way to Russian trolls. You can find the dataset <a href=nbcnews.com/tech/social-media/now-available-more-200-000-deleted-russian-troll-tweets-n844731?cid=sm_npd_nn_tw_ma>here</a>.</p>
+	   
+	</div>
 
     <div class="w3-third w3-center">
       <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
@@ -72,18 +72,55 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
-
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h1>FAQ</h1>
+      <h5 class="w3-padding-32">I put in (normal thing) and it says it's a troll tweet! What gives?</h5>
+      <p class="w3-text-grey">The AI is bound to have false negatives and false positives. In testing, accuracy on completely new data was roughly <b>87%</b>. However, if you want to help the AI learn, please submit your tweet <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so the AI can learn from it.</p>
+	  <h5 class="w3-padding-32">I put in (something that expresses a partisan view) and it says it's a regular tweet! What gives?</h5>
+      <p class="w3-text-grey">The AI is trained to detect incendiary rhetoric, fake news and divisive comments. Tweets that simply voice support for a party or candidate (ex. "I think Donald Trump is doing great things for this country") shouldn't register. If the AI is registering otherwise, please fill out the form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so that we can improve the AI.</p>
+      <h5 class="w3-padding-32">Where did you get your data?</h5>
+      <p class="w3-text-grey">NBC Universal has provided 200,000 tweets determined to be related in some way to Russian trolls. You can find the dataset <a href="http://nbcnews.com/tech/social-media/now-available-more-200-000-deleted-russian-troll-tweets-n844731?cid=sm_npd_nn_tw_ma">here</a>. There's also a popular dataset of 1,600,000 "regular" tweets <a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/">here</a>.</p>
+      <h5 class="w3-padding-32">I put in (something that happened recently) and it's not working! What gives?</h5>
+      <p class="w3-text-grey">The database is from Feb 2018, so while it is fairly current, very recent events won't register. You can help it learn by submitting tweets <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+	  <h5 class="w3-padding-32">How accurate is this AI?</h5>
+      <p class="w3-text-grey">On things it's never seen before, it correctly classifies tweets <b>87%</b> of the time <i>(for the technically minded, it has a validation accuracy of 87%)</i>. You can help it learn by submitting tweets <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+	  <h5 class="w3-padding-32">In excruciating detail, how does this work?</h5>
+      <p class="w3-text-grey">There is a somewhat coherent readme <a href="https://github.com/ares513/DetectingTrolls/">here</a></p>
+	  
+      <p class="w3-text-grey"></p>
     </div>
   </div>
 </div>
+<!-- Third Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+    <div class="w3-twothird">
+      <h1>Submit An Error</h1>
+      <h5 class="w3-padding-32">It gave a wrong answer</h5>
+      <p class="w3-text-grey">Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+	  <h5 class="w3-padding-32">There's a problem with the website or I have feedback</h5>
+      <p class="w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
+    </div>
+  </div>
+</div>
+<!-- Fourth Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Donate & Contribute</h1>
+      <h5 class="w3-padding-32">Helping out</h5>
+      <p class="w3-text-grey">Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+	  <h5 class="w3-padding-32">There's a problem with the website or I have feedback</h5>
+      <p class="w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->
