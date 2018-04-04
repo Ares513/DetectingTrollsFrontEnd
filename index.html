@@ -27,18 +27,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="navMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Report an Error</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Donate & Contribute</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+    <a href="#faq" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
+    <a href="#error" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Report an Error</a>
+    <a href="#donate" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Donate & Contribute</a>
+    <a href="#legalBtn" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Legal</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">About</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Report An Error</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Donate & Contribute</a>
+    <a href="#about" class="w3-bar-item w3-button w3-padding-large">About</a>
+    <a href="#faq" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+    <a href="#error" class="w3-bar-item w3-button w3-padding-large">Report An Error</a>
+    <a href="#donate" class="w3-bar-item w3-button w3-padding-large">Donate & Contribute</a>
+    <a href="#legalBtn" class="w3-bar-item w3-button w3-padding-large">Legal</a>
   </div>
 </div>
 
@@ -46,15 +48,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <header class="w3-container w3-red w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">Troll Detector</h1>
   <p class="w3-xlarge">Use this AI to see how likely a tweet is to be from a Russian Troll!</p>
-  <textarea name="textarea" class="w3-input" style="width:50%; margin: 0 auto; min-height: 80px; font-size: 18px;"></textarea>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Compute</button>
+  <textarea name="textarea" class="w3-input" style="width:50%; margin: 0 auto; min-height: 80px; font-size: 18px;" id="targetBox"></textarea>
+  <button id="compute" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" >Compute</button>
+  <div id="results" class="w3-panel w3-blue">
+	This is a sample results pane.
+  </div>
 </header>
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>About</h1>
+      <h1 id="about">About</h1>
       <h3 class="w3-padding-32">What is this and what does it do?</h3>
 
       <p class="w3-text-grey">This is an artificial intelligence (AI) designed to detect the difference between "regular" tweets and Russian troll tweets. It's not perfect, and it only operates on text, so it won't investigate a particular Twitter user.</p>
@@ -77,7 +82,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-twothird">
-      <h1>FAQ</h1>
+      <h1 id="faq">FAQ</h1>
       <h3 class="w3-padding-32">I put in (normal thing) and it says it's a troll tweet! What gives?</h3>
       <p class="w3-text-grey">The AI is bound to have false negatives and false positives. In testing, accuracy on completely new data was roughly <b>87%</b>. However, if you want to help the AI learn, please submit your tweet <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so the AI can learn from it. <b>Just because the AI says something is a troll tweet doesn't mean it actually is. See the <a href="#legal">legal/disclaimer</a> section.</p>
 	  <h3 class="w3-padding-32">I put in (something that expresses a partisan view) and it says it's a regular tweet! What gives?</h3>
@@ -106,7 +111,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-twothird">
-      <h1>Submit An Error</h1>
+      <h1 id="error">Submit An Error</h1>
       <h3 class="w3-padding-32">It flagged a tweet incorrectly, or fails to flag an obvious troll tweet</h3>
       <p class="w3-text-grey">It is bound to make mistakes. Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
 	  <h3 class="w3-padding-32">There's a problem with the website or I have feedback</h3>
@@ -122,7 +127,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-twothird">
-      <h1>Donate & Contribute</h1>
+      <h1 id="donate">Donate & Contribute</h1>
       <h3 class="w3-padding-32">Helping out</h3>
       <p class="w3-text-grey">Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
 	  <h3 class="w3-padding-32">There's a problem with the website or I have feedback</h3>
@@ -139,7 +144,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
   <div class="w3-xlarge w3-padding-32">
-	<button onclick="legalAccordion('legal')" class="w3-button w3-block w3-black w3-left-align">Legal (click to expand)</button>
+	<button onclick="legalAccordion('legal')" class="w3-button w3-block w3-black w3-left-align" id="legalBtn">Legal (click to expand)</button>
 	<div id="legal" class="w3-hide w3-animate-opacity">
 		The information contained in this site and the DetectingTrolls AI are provided as-is for general guidance and matters of interest only. There may be delays, omissions, and inaccuracies. DetectingTrolls is not an official service, and is not affiliated with Twitter, NBC Universal, or any of the software packages used to build it. All information is provided "as is" with no guarantee of completeness or accuracy. We're not responsible for any decision made or action taken based on the results of DetectingTrolls. The DetectingTrolls tool is highly experimental and data driven. It does not reflect the views of its creator.  
 	</div>
@@ -174,14 +179,22 @@ function legalAccordion(id) {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-</script>
-
-<script>
 function hitTarget(target) {
+	if (target == "") {
+		
+	}
 	$.getJSON('http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/predict?target=' + target, function(data) {
-		alert(data);
+		console.log(data);
+		$("#results").html("Hello world!");
 	});
-	return false;
+	
 }
+$(document).ready(function(){
+	$("#results").hide();
+    $("#compute").click(function(){
+		hitTarget(document.getElementById("#targetBox"));
+        $("#results").slideDown();
+    });
+});
 </script>
 </html> 
