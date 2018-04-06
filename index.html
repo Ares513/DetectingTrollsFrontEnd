@@ -241,7 +241,7 @@ function hitTarget(target) {
 		cache: false,
 		type: "GET",
 		success: function(data) {
-			jsonData = json.parse(data);
+			jsonData = JSON.parse(data);
 			console.log(data);
 			var reg = precisionRound(jsonData[0][0] * 100, 3);
 			var troll = precisionRound(jsonData[0][1] * 100, 3);
