@@ -239,12 +239,11 @@ function hitTarget(target) {
 		type: "GET",
 		success: function(data) {
 			console.log(data);
-			jsonData = JSON.parse(data);
 			
-			var reg = precisionRound(jsonData[0][0] * 100, 3);
-			var troll = precisionRound(jsonData[0][1] * 100, 3);
+			var reg = precisionRound(data[0][0] * 100, 3);
+			var troll = precisionRound(data[0][1] * 100, 3);
 			$("#overall").html("Regular: {0}% <br> Troll: {1}%".format(parseFloat(reg), parseFloat(troll)));
-			$("#interpret").html(getInterpret(jsonData[0][0], jsonData[0][1]));
+			$("#interpret").html(getInterpret(data[0][0], data[0][1]));
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			console.log(xhr);
