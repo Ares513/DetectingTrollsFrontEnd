@@ -233,14 +233,45 @@ function hitTarget(target) {
 		return false;
 	}
 	$("#error").html("");
-	$.getJSON('http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/predict?target=' + target, function(data) {
-		console.log(data);
-		var reg = precisionRound(data[0][0] * 100, 3);
-		var troll = precisionRound(data[0][1] * 100, 3);
-		$("#overall").html("Regular: {0}% <br> Troll: {1}%".format(parseFloat(reg), parseFloat(troll)));
-		$("#interpret").html(getInterpret(data[0][0], data[0][1]));
-		
+	$.ajax({
+		url: 'http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/',
+		data: {
+			"target": target
+		},
+		cache: false,
+		type: "GET",
+		success: function(data) {
+			jsonData = json.parse(data);
+			console.log(data);
+			var reg = precisionRound(jsonData[0][0] * 100, 3);
+			var troll = precisionRound(jsonData[0][1] * 100, 3);
+			$("#overall").html("Regular: {0}% <br> Troll: {1}%".format(parseFloat(reg), parseFloat(troll)));
+			$("#interpret").html(getInterpret(jsonData[0][0], jsonData[0][1]));
+		},
+		error: function(xhr, textStatus, errorThrown) {
+			console.log(xhr);
+			xhr.onerror = function(e) {
+				alert("Error Status: " + e.target.status);
+			};
+			console.log(errorThrown);
+			console.log(textStatus);
+			if(xhr.status == 502) {
+				$("#error").html("It looks like the AI is currently offline. Please check back later.");
+			}
+		}
 	});
+	/*
+	$.get('http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/predict?target=' + target, function(data) {
+		jsonData = json.parse(data);
+		console.log(data);
+		var reg = precisionRound(jsonData[0][0] * 100, 3);
+		var troll = precisionRound(jsonData[0][1] * 100, 3);
+		$("#overall").html("Regular: {0}% <br> Troll: {1}%".format(parseFloat(reg), parseFloat(troll)));
+		$("#interpret").html(getInterpret(jsonData[0][0], jsonData[0][1]));
+	})
+	
+	.fail(function(xhr, status, error) { alert(xhr); });
+	*/
 	
 }
 $(document).ready(function(){
