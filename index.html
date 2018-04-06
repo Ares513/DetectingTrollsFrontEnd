@@ -241,8 +241,9 @@ function hitTarget(target) {
 		cache: false,
 		type: "GET",
 		success: function(data) {
-			jsonData = JSON.parse(data);
 			console.log(data);
+			jsonData = JSON.parse(data);
+			
 			var reg = precisionRound(jsonData[0][0] * 100, 3);
 			var troll = precisionRound(jsonData[0][1] * 100, 3);
 			$("#overall").html("Regular: {0}% <br> Troll: {1}%".format(parseFloat(reg), parseFloat(troll)));
