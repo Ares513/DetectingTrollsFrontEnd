@@ -234,10 +234,7 @@ function hitTarget(target) {
 	}
 	$("#error").html("");
 	$.ajax({
-		url: 'http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/',
-		data: {
-			"target": target
-		},
+		url: 'http://ec2-13-58-105-252.us-east-2.compute.amazonaws.com/predict?target=' + encodeURIComponent(target),
 		cache: false,
 		type: "GET",
 		success: function(data) {
