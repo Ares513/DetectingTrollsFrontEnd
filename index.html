@@ -228,9 +228,7 @@ function getInterpret(reg, troll) {
 }
 function hitTarget(target) {
 	if (target == "") {
-		$("#error").html("You need to enter a tweet!");
-		$("#overall").html("");
-		$("#interpret").html("");
+		reportError("You need to enter a tweet!");
 		return false;
 	}
 	$("#error").html("");
@@ -254,17 +252,22 @@ function hitTarget(target) {
 			console.log(errorThrown);
 			console.log(textStatus);
 			if(xhr.status == 502) {
-				$("#error").html("It looks like the AI is currently offline. Please check back later.");
+				reportError("It looks like the AI is currently offline. Please check back later.");
 			}
 			if(xhr.status == 406) {
-				$("#error").html("Currently the API only supports direct links to tweets. It looks like you entered a URL, but not a Twitter URL.");
+				reportError("Currently the API only supports direct links to tweets. It looks like you entered a URL, but not a Twitter URL.");
 			}
 			if(xhr.status == 500) {
-				$("#error").html("It appears you sent a request that resulted in an unspecified error.");
+				reportError("It appears you sent a request that resulted in an unspecified error.");
 			}
 		}
 	});
 	
+}
+function reportError(error) {
+		$("#error").html(error);
+		$("#overall").html("");
+		$("#interpret").html("");
 }
 $(document).ready(function(){
 	$("#results").hide();
