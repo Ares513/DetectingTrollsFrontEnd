@@ -46,7 +46,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Header -->
 <header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">Troll Detector</h1>
+  <h1 class="w3-margin w3-jumbo">Troll Spotter</h1>
   <p class="w3-xlarge">Use this AI to see how likely a tweet is to be from a Russian Troll!</p>
   <p class="w3-large">Enter text or a direct link to a tweet.</p>
   <textarea name="textarea" class="w3-input" style="width:50%; margin: 0 auto; min-height: 80px; font-size: 18px;" id="targetBox"></textarea>
@@ -72,7 +72,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <h3 class="w3-padding-32">Data Sources</h3>
 	  <p class="w3-text-grey">NBC Universal has provided 200,000 tweets determined to be related in some way to Russian trolls. You can find the dataset <a href="http://nbcnews.com/tech/social-media/now-available-more-200-000-deleted-russian-troll-tweets-n844731?cid=sm_npd_nn_tw_ma">here</a>. There's also a popular dataset of 1,600,000 "regular" tweets <a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/">here</a>.</p>
       <h3 class="w3-padding-32">How it works</h3>
-	  <p class="w3-text-grey">DetectingTrolls is an <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural network</a> that was trained on 1,600,000 "regular" tweets, and 200,000 known Russian troll tweets. The percentages you see in the output roughly represent how close your input is to tweets its seen before of either category.</p>
+	  <p class="w3-text-grey">TrollSpotter is an <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural network</a> that was trained on 1,600,000 "regular" tweets, and 200,000 known Russian troll tweets. The percentages you see in the output roughly represent how close your input is to tweets its seen before of either category.</p>
       
 	</div>
 
@@ -105,7 +105,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
       <p class="w3-text-grey">For all inquiries, media or otherwise, please contact me at detectingthetrolls@gmail.com</p>
 	  
 	  <h3 class="w3-padding-32">In excruciating detail, how does this work?</h3>
-      <p class="w3-text-grey">There is a somewhat coherent readme <a href="https://github.com/ares513/DetectingTrolls/">here</a> that explains how things work.</p>
+      <p class="w3-text-grey">There is a somewhat coherent readme <a href="https://github.com/ares513/TrollSpotter/">here</a> that explains how things work.</p>
 	  
       <p class="w3-text-grey"></p>
     </div>
@@ -141,7 +141,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 	  <h3 class="w3-padding-32">There's a problem with the website or I have feedback</h3>
       <p class="w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
 	  <h3 class="w3-padding-32">I'm an engineer and there is (some likely legitimate complaint about my code)</h3>
-      <p class="w3-text-grey">It's all open source on GitHub, so feel free to fork it and throw up a pull request there. The data is also in the repo.<br><a href="https://github.com/ares513/DetectingTrolls">Service repository</a><br> <a href="https://github.com/ares513/DetectingTrollsFrontEnd">Website repository</a></p>
+      <p class="w3-text-grey">It's all open source on GitHub, so feel free to fork it and throw up a pull request there. The data is also in the repo.<br><a href="https://github.com/ares513/TrollSpotter">Service repository</a><br> <a href="https://github.com/ares513/TrollSpotterFrontEnd">Website repository</a></p>
 	  <h3 class="w3-padding-32">I'd like to help pay for things</h3>
       <p class="w3-text-grey">Your money will help us improve the technology. Some future improvements could be live integration with a Twitter bot, a connection to live news feeds so it stays current, and a more powerful host so it can serve more requests. There isn't a donation link set up yet, but if you'd like to help, please reach out to detectingthetrolls@gmail.com</p>
 	  
@@ -154,7 +154,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-xlarge w3-padding-32">
 	<button onclick="legalAccordion('legal')" class="w3-button w3-block w3-black w3-left-align" id="legalBtn">Legal (click to expand)</button>
 	<div id="legal" class="w3-hide w3-animate-opacity">
-		The information contained in this site and the DetectingTrolls AI are provided as-is for general guidance and matters of interest only. There may be delays, omissions, and inaccuracies. DetectingTrolls is not an official service, and is not affiliated with Twitter, NBC Universal, or any of the software packages used to build it. All information is provided "as is" with no guarantee of completeness or accuracy. We're not responsible for any decision made or action taken based on the results of DetectingTrolls. The DetectingTrolls tool is highly experimental and data driven. It does not reflect the views of its creator.  
+		The information contained in this site and the TrollSpotter AI are provided as-is for general guidance and matters of interest only. There may be delays, omissions, and inaccuracies. TrollSpotter is not an official service, and is not affiliated with Twitter, NBC Universal, or any of the software packages used to build it. All information is provided "as is" with no guarantee of completeness or accuracy. We're not responsible for any decision made or action taken based on the results of TrollSpotter. The TrollSpotter tool is highly experimental and data driven. It does not reflect the views of its creator.  
 	</div>
 	</div>
 	<!--
@@ -203,6 +203,9 @@ function getInterpret(reg, troll) {
 	if(reg > 0.60 && troll < 0.30) {
 		return "The AI is <b>mostly sure</b> that the tweet is <b>normal</b>.";
 	}
+	if(reg > 0.50 && troll < 0.40) {
+		return "The AI is <b>partially sure</b> that the tweet is <b>normal</b>.";
+	}
 	if(reg > troll && reg - troll < 0.1) {
 		return "The AI is <b>not sure</b> that the tweet is <b>normal</b>, but leans slightly to that. It is too close to call.";
 	}
@@ -218,6 +221,9 @@ function getInterpret(reg, troll) {
 	}
 	if(troll > 0.60 && reg < 0.30) {
 		return "The AI is <b>mostly sure</b> that the tweet is <b>troll</b>.";
+	}
+	if(troll > 0.50 && reg < 0.40) {
+		return "The AI is <b>partially sure</b> that the tweet is <b>troll</b>.";
 	}
 	if(troll > reg && troll - reg < 0.1) {
 		return "The AI is <b>not sure</b> that the tweet is <b>troll</b>, but leans slightly towards that. It is too close to call.";
