@@ -19,6 +19,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .icon {
 	font-size: 200px;
 }
+.larger_font {
+	font-size: 17px;
+}
 </style>
 <body>
 
@@ -47,8 +50,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- Header -->
 <header class="w3-container w3-red w3-center" style="padding:128px 16px">
   <h1 class="w3-margin w3-jumbo">Troll Spotter</h1>
-  <p class="w3-xlarge">Use this AI to see how likely a tweet is to be from a Russian Troll!</p>
-  <p class="w3-large">Enter text or a direct link to a tweet.</p>
+  <p class="larger_font w3-xlarge">Use this AI to see how likely a tweet is to be from a Russian Troll!</p>
+  <p class="larger_font w3-large">Enter text or a direct link to a tweet.</p>
   <textarea name="textarea" class="w3-input" style="width:50%; margin: 0 auto; min-height: 80px; font-size: 18px;" id="targetBox"></textarea>
   <button id="compute" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" >Compute</button>
   <div id="results" class="w3-panel w3-blue">
@@ -64,15 +67,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   <div class="w3-content">
     <div class="w3-twothird">
       <h1 id="about">About</h1>
-      <h3 class="w3-padding-32">What is this and what does it do?</h3>
-
-      <p class="w3-text-grey">This is an artificial intelligence (AI) designed to detect the difference between "regular" tweets and Russian troll tweets. It's not perfect, and it only operates on text, so it won't investigate a particular Twitter user.</p>
-	  <p class="w3-text-grey">Bad actors are using technology to spread divisve rhetoric and fake news. Manual intervention is not effective enough, because by the time it gets reported, the tweet has reached all the people it is likely to reach. So, if they're going to use technology, so can we.</p>
-	  <p class="w3-text-grey">When you submit a tweet, a breakdown of what the results mean will be displayed. If you think the result is wrong, help us out by submitting the tweet <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a>.</p>
-      <h3 class="w3-padding-32">Data Sources</h3>
-	  <p class="w3-text-grey">NBC Universal has provided 200,000 tweets determined to be related in some way to Russian trolls. You can find the dataset <a href="http://nbcnews.com/tech/social-media/now-available-more-200-000-deleted-russian-troll-tweets-n844731?cid=sm_npd_nn_tw_ma">here</a>. There's also a popular dataset of 1,600,000 "regular" tweets <a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/">here</a>.</p>
-      <h3 class="w3-padding-32">How it works</h3>
-	  <p class="w3-text-grey">TrollSpotter is an <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural network</a> that was trained on 1,600,000 "regular" tweets, and 200,000 known Russian troll tweets. The percentages you see in the output roughly represent how close your input is to tweets its seen before of either category.</p>
+      <p class="larger_font w3-text-grey">This is an artificial intelligence (AI) designed to detect the difference between "regular" tweets and Russian troll tweets. It's not perfect, and it only operates on text, so it won't investigate a particular Twitter user.</p>
+	  <p class="larger_font w3-text-grey">Bad actors are using technology to spread divisve rhetoric and fake news. Manual intervention is not effective enough, because by the time it gets reported, the tweet has reached all the people it is likely to reach. So, if they're going to use technology, so can we.</p>
+	  <p class="larger_font w3-text-grey">When you submit a tweet, a breakdown of what the results mean will be displayed. If you think the result is wrong, help us out by submitting the tweet <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a>.</p>
+      <h3 class="w3-padding-32">Where did you get your data?</h3>
+	  <p class="larger_font w3-text-grey">NBC Universal has provided 200,000 tweets determined to be related in some way to Russian trolls. You can find the dataset <a href="http://nbcnews.com/tech/social-media/now-available-more-200-000-deleted-russian-troll-tweets-n844731?cid=sm_npd_nn_tw_ma">here</a>. There's also a popular dataset of 1,600,000 "regular" tweets <a href="http://thinknook.com/twitter-sentiment-analysis-training-corpus-dataset-2012-09-22/">here</a>.</p>
+      <h3 class="w3-padding-32">How does it work?</h3>
+	  <p class="larger_font w3-text-grey">TrollSpotter is an <a href="https://en.wikipedia.org/wiki/Artificial_neural_network">artificial neural network</a> that was trained on 1,600,000 "regular" tweets, and 200,000 known Russian troll tweets. The percentages you see in the output roughly represent how close your input is to tweets its seen before of either category.</p>
       
 	</div>
 
@@ -92,27 +93,27 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="w3-twothird">
       <h1 id="faq">FAQ</h1>
       <h3 class="w3-padding-32">I put in (normal thing) and it says it's a troll tweet! What gives?</h3>
-      <p class="w3-text-grey">The AI is bound to have false negatives and false positives. In testing, accuracy on completely new data was roughly <b>87%</b>. However, if you want to help the AI learn, please submit your tweet <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so the AI can learn from it. <b>Just because the AI says something is a troll tweet doesn't mean it actually is. See the <a href="#legal">legal/disclaimer</a> section.</p>
+      <p class="larger_font w3-text-grey">The AI is bound to have false negatives and false positives. In testing, accuracy on completely new data was roughly <b>87%</b>. However, if you want to help the AI learn, please submit your tweet <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so the AI can learn from it. <b>Just because the AI says something is a troll tweet doesn't mean it actually is. See the <a href="#legal">legal/disclaimer</a> section.</b></p>
 	  <h3 class="w3-padding-32">I put in (something that expresses a partisan view) and it says it's a regular tweet! What gives?</h3>
-      <p class="w3-text-grey">The AI is trained to detect incendiary rhetoric, fake news and divisive comments. Tweets that simply voice support for a party or candidate (ex. "I think Donald Trump is doing great things for this country") shouldn't register. If the AI is registering otherwise, please fill out the form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so that we can improve the AI.</p>
+      <p class="larger_font w3-text-grey">The AI is trained to detect incendiary rhetoric, fake news and divisive comments. Tweets that simply voice support for a party or candidate (ex. "I think Donald Trump is doing great things for this country") shouldn't register. If the AI is registering otherwise, please fill out the form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a> so that we can improve the AI.</p>
 	  <h3 class="w3-padding-32">Why don't the results add up to 100%?</h3>
-      <p class="w3-text-grey">Though the final result is binary, there are two results, each expressed as a percentage. They are independent of each other, even though they usually are close to 100% when added together. This allows the AI to express confusion in a result- a 0% result on both outputs indicates it's never seen it before.</p>
+      <p class="larger_font w3-text-grey">Though the final result is binary, there are two results, each expressed as a percentage. They are independent of each other, even though they usually are close to 100% when added together. This allows the AI to express confusion in a result- a 0% result on both outputs indicates it's never seen it before.</p>
 	  <h3 class="w3-padding-32">I put in (something that happened recently) and it's not working! What gives?</h3>
-      <p class="w3-text-grey">The database is from Feb 2018, so while it is fairly current, very recent events won't register. You can help it learn by submitting tweets <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+      <p class="larger_font w3-text-grey">The database is from Feb 2018, so while it is fairly current, very recent events won't register. You can help it learn by submitting tweets <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
 	  <h3 class="w3-padding-32">How accurate is this AI?</h3>
-      <p class="w3-text-grey">On things it's never seen before, it correctly classifies tweets <b>87%</b> of the time <i>(for the technically minded, it has a validation accuracy of 87%)</i>. You can help it learn by submitting tweets <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+      <p class="larger_font w3-text-grey">On things it's never seen before, it correctly classifies tweets <b>87%</b> of the time <i>(for the technically minded, it has a validation accuracy of 87%)</i>. You can help it learn by submitting tweets <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
 	  <h3 class="w3-padding-32">How can I contact the creator?</h3>
-      <p class="w3-text-grey">For all inquiries, media or otherwise, please contact me at detectingthetrolls@gmail.com</p>
+      <p class="larger_font w3-text-grey">For all inquiries, media or otherwise, please contact me at detectingthetrolls@gmail.com</p>
 	  
 	  <h3 class="w3-padding-32">In excruciating detail, how does this work?</h3>
-      <p class="w3-text-grey">There is a somewhat coherent readme <a href="https://github.com/ares513/TrollSpotter/">here</a> that explains how things work.</p>
+      <p class="larger_font w3-text-grey">There is a somewhat coherent readme <a href="https://github.com/ares513/TrollSpotter/">here</a> that explains how things work.</p>
 	  
-      <p class="w3-text-grey"></p>
+      <p class="larger_font w3-text-grey"></p>
     </div>
   </div>
 </div>
 <!-- Third Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+<div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
       <i class="fas fa-exclamation-triangle w3-padding-64 w3-text-red w3-margin-right icon"></i>
@@ -121,9 +122,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="w3-twothird">
       <h1 id="report">Submit An Error</h1>
       <h3 class="w3-padding-32">It flagged a tweet incorrectly, or fails to flag an obvious troll tweet</h3>
-      <p class="w3-text-grey">It is bound to make mistakes. Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
+      <p class="larger_font w3-text-grey">It is bound to make mistakes. Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a></p>
 	  <h3 class="w3-padding-32">There's a problem with the website or I have feedback</h3>
-      <p class="w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
+      <p class="larger_font w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
     </div>
   </div>
 </div>
@@ -137,13 +138,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <div class="w3-twothird">
       <h1 id="donate">Donate & Contribute</h1>
       <h3 class="w3-padding-32">Helping out</h3>
-      <p class="w3-text-grey">Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a><br>We will use crowdsourced feedback to better train the AI.</p>
+      <p class="larger_font w3-text-grey">Please help the AI learn by filling out the Google form <a href="https://goo.gl/forms/kVyEnDkEXozQfAh83">here</a><br>We will use crowdsourced feedback to better train the AI.</p>
 	  <h3 class="w3-padding-32">There's a problem with the website or I have feedback</h3>
-      <p class="w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
+      <p class="larger_font w3-text-grey">Feel free to fill out your thoughts <a href="https://goo.gl/forms/IqoLGyrNmcUkRC912">here</a></p>
 	  <h3 class="w3-padding-32">I'm an engineer and there is (some likely legitimate complaint about my code)</h3>
-      <p class="w3-text-grey">It's all open source on GitHub, so feel free to fork it and throw up a pull request there. The data is also in the repo.<br><a href="https://github.com/ares513/TrollSpotter">Service repository</a><br> <a href="https://github.com/ares513/TrollSpotterFrontEnd">Website repository</a></p>
+      <p class="larger_font w3-text-grey">It's all open source on GitHub, so feel free to fork it and throw up a pull request there. The data is also in the repo.<br><a href="https://github.com/ares513/TrollSpotter">Service repository</a><br> <a href="https://github.com/ares513/TrollSpotterFrontEnd">Website repository</a></p>
 	  <h3 class="w3-padding-32">I'd like to help pay for things</h3>
-      <p class="w3-text-grey">Your money will help us improve the technology. Some future improvements could be live integration with a Twitter bot, a connection to live news feeds so it stays current, and a more powerful host so it can serve more requests. There isn't a donation link set up yet, but if you'd like to help, please reach out to detectingthetrolls@gmail.com</p>
+      <p class="larger_font w3-text-grey">Your money will help us improve the technology. Some future improvements could be live integration with a Twitter bot, a connection to live news feeds so it stays current, and a more powerful host so it can serve more requests. There isn't a donation link set up yet, but if you'd like to help, please reach out to detectingthetrolls@gmail.com</p>
 	  
     </div>
   </div>
@@ -151,7 +152,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
+  <div class="w3-large w3-padding-32">
 	<button onclick="legalAccordion('legal')" class="w3-button w3-block w3-black w3-left-align" id="legalBtn">Legal (click to expand)</button>
 	<div id="legal" class="w3-hide w3-animate-opacity">
 		The information contained in this site and the TrollSpotter AI are provided as-is for general guidance and matters of interest only. There may be delays, omissions, and inaccuracies. TrollSpotter is not an official service, and is not affiliated with Twitter, NBC Universal, or any of the software packages used to build it. All information is provided "as is" with no guarantee of completeness or accuracy. We're not responsible for any decision made or action taken based on the results of TrollSpotter. The TrollSpotter tool is highly experimental and data driven. It does not reflect the views of its creator.  
