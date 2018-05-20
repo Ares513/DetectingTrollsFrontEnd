@@ -232,7 +232,7 @@ function getInterpret(reg, troll) {
 		return "The AI is <b>not sure</b> that the tweet is <b>troll</b>, but leans slightly towards that. It is too close to call.";
 	}
 
-	if(reg > troll) {
+	if(troll > regular) {
 		return "The AI is <b>somewhat sure</b> that the tweet is <b>troll</b>.";
 	}
 
